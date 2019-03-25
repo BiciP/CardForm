@@ -1,0 +1,70 @@
+#card {
+  width: 317.2px;
+  height: 200px;
+  font-family: 'PT Mono', monospace;
+}
+
+.card {
+  border-radius: 10px;
+  color: white;
+}
+
+.front {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+.back {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(195deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+#expiry {
+  position: absolute;
+  bottom: 10px;
+  right: 35px;
+}
+
+#name {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+}
+
+#number {
+  position: absolute;
+  bottom: 50px;
+  left: 15px;
+}
+
+#ctype {
+    position: absolute;
+    height: 80px;
+    right: 10px;
+    top: -5px;
+}
+
+#chip {
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+.signature {
+    position: absolute;
+    top: 75px;
+    left: 20px;
+    width: 210px;
+    background-image: linear-gradient( 90deg,  rgba(197,214,227,1) 2.9%, rgba(144,175,202,1) 97.1% );
+    text-align: right;
+    padding: 0 10px;
+}
+
+.bar {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: rgb(18,18,18);
+    top: 10px;
+}
