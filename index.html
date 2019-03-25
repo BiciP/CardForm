@@ -1,0 +1,38 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.js"></script>
+    <script src="includes/cleave.js"></script>
+    <link rel="stylesheet" href="./includes/style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+
+<head>
+<body>
+  <script src="includes/script.js"></script>
+
+<div id='card' style="perspective: 636.4px; position: relative; transform-style: preserve-3d;">
+  <div class="card front">
+    <div class="card-front">
+      <img id="chip" src="images/chip.png" alt="CHIP PNG">
+      <img id="ctype" src="images/amex.png" alt="Credit Card Type" style="display:none;">
+      <p id="number">8888 8888 8888 8888</p>
+      <p id="name"><span id="firstname">John</span> <span id="lastname">Wick</span></p>
+      <p id="expiry"><span>09</span>/<span>21</span><p>
+    </div>
+  </div>
+  <div class="card back">
+    <div class="bar"></div>
+    <div class="signature">
+      <p id="cvc">666</p>
+    </div>
+  </div>
+</div>
+
+<form>
+    <input type="text" maxlength="19" class="number" placeholder="8888 8888 8888 8888" name="number">
+    <input type="text" maxlength="10" class="fname" name="fname"/>
+    <input type="text" maxlength="21" class="lname" name="lname"/>
+    <input type="text" class="expiry" name="expiry"/>
+    <input type="text" maxlength="4" class="cvc" name="cvc"/>
+</form>
+
+</body>
