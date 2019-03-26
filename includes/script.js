@@ -1,11 +1,19 @@
 $(document).ready(function() {
 
+  for(let i = 2020; i<2040; i++){
+    var o = new Option(i, i%2000);
+    $(o).html(i);
+    $(".expiryYY").append(o);
+  }
+
+
+  let cards = ['maestro', 'diners', 'discover', 'amex', 'mastercard', 'visa'];
+
   let cleave = new Cleave('.number', {
     creditCard: true,
     onCreditCardTypeChanged: function (type) {
-      if(type != "unknown"){
+      if(type != "unknown" && cards.indexOf(type) != -1){
         $("#ctype").attr('src', 'images/'+type+'.png');
-
         if(type == "maestro" || type == "diners" || type == "discover"){
           $("#ctype").css({"height": "50px", "top": "10px"});
         }else if (type == "visa") {
@@ -56,22 +64,14 @@ $(document).ready(function() {
     if($(".fname").val().length != 0)
       $("#firstname").text($(".fname").val());
     else {
-      $("#firstname").text("John");
-    }
-  });
-
-  $(".lname").keyup(function (e) {
-    if($(".lname").val().length != 0)
-      $("#lastname").text($(".lname").val());
-    else {
-      $("#lastname").text("Wick");
+      $("#firstname").text("John Wick");
     }
   });
 
   let prevLen = 0;
 
-  $(".lname, .fname").keyup(function (e) {
-    let a = $(".lname").val().length + $(".fname").val().length + 1;
+  $(".fname").keyup(function (e) {
+    let a = $(".fname").val().length;
     if(a > 21 && prevLen < a){
       let fontSize = parseInt($("#name").css("font-size")) - 1;
       $("#name").css({"font-size":fontSize});
@@ -93,6 +93,14 @@ $(document).ready(function() {
     else {
       $("#cvc").text("666");
     }
+  });
+
+  $(".expiryMM").change(function () {
+    $("#expiryMM").text($(".expiryMM").val());
+  });
+
+  $(".expiryYY").change(function () {
+    $("#expiryYY").text($(".expiryYY").val());
   });
 
 });

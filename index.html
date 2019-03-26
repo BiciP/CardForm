@@ -3,36 +3,83 @@
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.js"></script>
     <script src="includes/cleave.js"></script>
     <link rel="stylesheet" href="./includes/style.css">
-    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono|Roboto|Ubuntu" rel="stylesheet">
 
 <head>
 <body>
   <script src="includes/script.js"></script>
 
-<div id='card' style="perspective: 636.4px; position: relative; transform-style: preserve-3d;">
-  <div class="card front">
-    <div class="card-front">
-      <img id="chip" src="images/chip.png" alt="CHIP PNG">
-      <img id="ctype" src="images/amex.png" alt="Credit Card Type" style="display:none;">
-      <p id="number">8888 8888 8888 8888</p>
-      <p id="name"><span id="firstname">John</span> <span id="lastname">Wick</span></p>
-      <p id="expiry"><span>09</span>/<span>21</span><p>
+<div id="card-wrapper">
+  <div id='card' style="perspective: 636.4px; position: relative; transform-style: preserve-3d;">
+    <div class="card front">
+      <div class="card-front">
+        <img id="chip" src="images/chip.png" alt="CHIP PNG">
+        <img id="ctype" src="images/amex.png" alt="Credit Card Type" style="display:none;">
+        <p id="number">8888 8888 8888 8888</p>
+        <p id="name"><span id="firstname">John Wick</span></p>
+        <p id="expiry"><span id="expiryMM">09</span>/<span id="expiryYY">21</span><p>
+        </div>
+      </div>
+      <div class="card back">
+        <div class="bar"></div>
+        <div class="signature">
+          <p id="cvc">666</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="card back">
-    <div class="bar"></div>
-    <div class="signature">
-      <p id="cvc">666</p>
-    </div>
-  </div>
 </div>
-
+<div id="form-main">
+<div class="payment-info">
+  <h1 id="payment-price">10.00€ Payment Checkout</h1>
+</div>
 <form>
-    <input type="text" maxlength="19" class="number" placeholder="8888 8888 8888 8888" name="number">
-    <input type="text" maxlength="10" class="fname" name="fname"/>
-    <input type="text" maxlength="21" class="lname" name="lname"/>
-    <input type="text" class="expiry" name="expiry"/>
-    <input type="text" maxlength="4" class="cvc" name="cvc"/>
-</form>
+  <div class="row">
+    <div class="form-field form-name">
+      <label for="fname">Cardholder Name</label>
+      <input type="text" maxlength="31" class="fname" name="fname"/>
+    </div>
+    <div class="form-field fcvv">
+      <label for="cvc">CVV</label>
+      <input type="text" maxlength="4" class="cvc" name="cvc"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-field fnum">
+      <label for="number">Card Number</label>
+      <input type="text" maxlength="19" class="number" name="number">
+    </div>
+  </div>
+  <div class="row">
+    <div class="expiry">
+      <label for="expiryMM">Expiration Date</label>
 
+      <div class="form-field">
+        <select class="expiryMM" name="expiryMM">
+          <option value="">Month</option>
+          <option value="01">Jan</option>
+          <option value="02">Feb</option>
+          <option value="03">Mar</option>
+          <option value="04">Apr</option>
+          <option value="05">May</option>
+          <option value="06">Jun</option>
+          <option value="07">Jul</option>
+          <option value="08">Aug</option>
+          <option value="09">Sep</option>
+          <option value="10">Oct</option>
+          <option value="11">Nov</option>
+          <option value="12">Dec</option>
+        </select>
+      </div>
+      <span id="divider">/</span>
+      <div class="form-field">
+        <label for="expiryYY"></label>
+        <select class="expiryYY" name="expiryYY">
+          <option value="">Year</option>
+          <option value="19">2019</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
 </body>
