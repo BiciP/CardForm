@@ -135,6 +135,7 @@ div#card-wrapper {
     position: relative;
     height: 0;
     margin: auto;
+    margin-top: 50px;
     width: 312.5;
     z-index: 1;
 }
